@@ -16,7 +16,10 @@ def add_student_route():
     if request.method == 'GET' :
         return render_template('add.html')
     else:
-        print("recieved post request")
+        name=request.form['student_name']
+        year=request.form['student_year']
+        finished_lab=request.form['finished_lab']
+        add_student(name,year,finished_lab)
         return  render_template('add.html')
 
 
